@@ -6,6 +6,8 @@ description: CRE8 AI free questions, credit purchases, usage charges, revisions,
 
 CRE8 AI helps explore and compare vaults, design proposals, and review strategies. You must review its output. It does not hold your private keys, and buying credits does not grant it authority over your funds.
 
+CRE8 AI conversations and proposal generation use **Anthropic Claude Sonnet 5.5**. The model supports vault comparisons, vault design, and strategy reviews; routine execution of approved strategies follows fixed rules without calling the chat model.
+
 > **Draft pricing and features | 2026-10-07:** These prices appear in the current configuration and launch design. Live payment deployment and acceptance checks are incomplete. This page does not promise that purchases are available now. Once open, the purchase and task-confirmation screens determine the price, asset, credits, and conditions.
 
 ## Free questions and AI credits

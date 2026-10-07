@@ -8,6 +8,10 @@ CRE8 agent tools read vault state, check conditions, prepare transactions, and s
 
 > Live vaults and live MCP availability have not been verified as open. Examples or downloads do not establish an operational live service. This page explains the intended workflow.
 
+## AI model
+
+CRE8 AI uses **Anthropic Claude Sonnet 5.5** for conversations and proposal generation, including vault comparisons, vault design, and strategy reviews. Model output does not grant transaction or Operator permissions.
+
 For chat, plans, and usage charges, see [CRE8 AI and credits](cre8-ai-credits.md). Routine strategy execution follows approved rules without calling the chat model or consuming AI credits each time.
 
 ## Two distinct use cases

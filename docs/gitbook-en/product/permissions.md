@@ -8,6 +8,8 @@ CRE8 limits operations through the vault mandate. Understanding who may trade, c
 
 This page describes the prototype. Live use still requires checking the particular vault's roles and settings.
 
+CRE8 AI uses **Anthropic Claude Sonnet 5.5** for conversations and proposal generation. Model choice does not change any role’s permissions; routine strategy execution follows approved rules without calling the chat model each time.
+
 ## Who can do what
 
 | Role | Permitted activity | Limits |
