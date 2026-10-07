@@ -46,7 +46,8 @@ for (const [locale, folder, prefix] of editions) {
     await writeFile(outFile, `---\ntitle: ${JSON.stringify(file==='README.md' ? (locale==='en'?'Explore CRE8':'认识 CRE8') : title)}\ndescription: ${JSON.stringify(description)}\n${file==='README.md'?'aside: false\n':''}---\n${text}`);
     manifest.push({locale, source:`docs/${folder}/${file}`, route, file:path.relative(target,outFile), title, description});
   }
-  metadata[locale] = groups;
+  // The active page opens its own group; other sections start collapsed.
+  metadata[locale] = groups.map(group => ({...group, collapsed:true}));
 }
 await writeFile(path.join(target,'.vitepress/sidebar.json'), JSON.stringify(metadata,null,2));
 await writeFile(path.join(target,'.vitepress/manifest.json'), JSON.stringify(manifest,null,2));

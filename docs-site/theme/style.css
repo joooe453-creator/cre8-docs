@@ -10,4 +10,10 @@
 @media(max-width:600px){.start-grid{grid-template-columns:1fr}.start-heading{gap:14px}.start-card{min-height:170px!important}.card-number{margin-bottom:14px}.vp-doc h1{font-size:30px}.vp-doc p,.vp-doc li{font-size:14px}.vp-doc th,.vp-doc td{padding:9px}.role-tabs button{padding:7px 9px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
-.VPSidebar .group{padding-bottom:8px}.VPSidebar .group+.group{margin-top:10px;padding-top:16px}
+.VPSidebar .group{padding-bottom:0}.VPSidebar .group+.group{margin-top:4px;padding-top:0}
+.VPSidebarItem.level-0,.VPSidebarItem.collapsed.level-0{padding-bottom:8px}
+.VPSidebarItem.level-0>.item{padding:4px 8px;margin-left:-8px;border-radius:4px;align-items:center}
+.VPSidebarItem.level-0>.item>.text{font-size:12px;letter-spacing:.04em}
+.VPSidebarItem.level-0>.item:hover,.VPSidebarItem.level-0.has-active>.item{background:var(--vp-c-brand-soft)}
+.VPSidebarItem.level-0>.item>.caret{margin-right:0}
+.VPSidebarItem.level-0>.items{padding-top:4px}
