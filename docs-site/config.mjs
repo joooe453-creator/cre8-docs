@@ -4,7 +4,13 @@ export default defineConfig({
   title:'CRE8 Docs', description:'Learn about CRE8 vaults, agents, and the rules governing funds.',
   lang:'en', cleanUrls:true, appearance:true, lastUpdated:false,
   sitemap:{ hostname:'https://docs.cre8.finance' },
-  head:[['link',{rel:'icon',type:'image/svg+xml',href:'/favicon.svg'}],['meta',{name:'theme-color',content:'#16222d'}]],
+  head:[
+    ['link',{rel:'icon',type:'image/png',sizes:'32x32',href:'/favicon-b-32.png'}],
+    ['link',{rel:'icon',type:'image/svg+xml',sizes:'any',href:'/favicon-b.svg'}],
+    ['link',{rel:'shortcut icon',href:'/favicon-b.ico'}],
+    ['link',{rel:'apple-touch-icon',sizes:'180x180',href:'/apple-touch-icon-b.png'}],
+    ['meta',{name:'theme-color',content:'#16222d'}]
+  ],
   locales:{ root:{label:'English',lang:'en'}, 'zh-cn':{label:'简体中文',lang:'zh-Hans',themeConfig:{
     nav:[{text:'主站',link:'https://cre8.finance'},{text:'打开应用',link:'https://app.cre8.finance'}],
     outline:{label:'本页内容'}, docFooter:{prev:'上一篇',next:'下一篇'},

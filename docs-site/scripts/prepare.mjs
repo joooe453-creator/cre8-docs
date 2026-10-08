@@ -56,7 +56,13 @@ await cp(path.join(root,'docs-site/theme'), path.join(target,'.vitepress/theme')
 for (const [from,to] of [['cre8-logo-light.svg','logo-light.svg'],['cre8-logo-dark.svg','logo-dark.svg']]) {
   await cp(path.join(root,'docs/gitbook-brand',from),path.join(target,'public',to));
 }
-await cp(path.join(root,'docs/gitbook-brand/avatars/cre8-avatar-light-background.svg'), path.join(target,'public/favicon.svg'));
+for (const name of ['favicon-b.svg','favicon-b.ico','favicon-b-32.png','apple-touch-icon-b.png']) {
+  await cp(path.join(root,'docs/gitbook-brand/icons',name),path.join(target,'public',name));
+}
+// Keep conventional fallback URLs consistent with the versioned browser icons.
+await cp(path.join(root,'docs/gitbook-brand/icons/favicon-b.svg'),path.join(target,'public/favicon.svg'));
+await cp(path.join(root,'docs/gitbook-brand/icons/favicon-b.ico'),path.join(target,'public/favicon.ico'));
+await cp(path.join(root,'docs/gitbook-brand/icons/apple-touch-icon-b.png'),path.join(target,'public/apple-touch-icon.png'));
 await writeFile(path.join(target,'public/CNAME'),'docs.cre8.finance\n');
 await writeFile(path.join(target,'public/.nojekyll'),'');
 await writeFile(path.join(target,'public/robots.txt'),'User-agent: *\nAllow: /\nSitemap: https://docs.cre8.finance/sitemap.xml\n');
