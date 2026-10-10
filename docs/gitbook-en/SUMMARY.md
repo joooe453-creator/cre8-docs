@@ -4,13 +4,13 @@
 
 ## Getting started
 
-* [How vaults work](getting-started/vaults.md)
+* [How funds work](getting-started/vaults.md)
 
 ## User guides
 
-* [Depositor guide](guides/depositors.md)
+* [Holder guide](guides/depositors.md)
   * [Depositing assets](guides/deposits.md)
-  * [Redemptions and exits](guides/redemptions.md)
+  * [Withdrawals and exits](guides/redemptions.md)
 * [Creator guide](guides/creators.md)
 * [Agent guide](guides/agents.md)
 * [CRE8 AI and credits](guides/cre8-ai-credits.md)
@@ -19,11 +19,11 @@
 
 * [Roles and permissions](product/permissions.md)
 * [Fees](product/fees.md)
-* [NAV and performance](product/nav-and-performance.md)
+* [Share price and performance](product/nav-and-performance.md)
 * [Risk controls and remaining risks](product/risk-controls.md)
 * [Supported protocols and operations](product/integrations.md)
 * [Security and service status](product/security-and-status.md)
-* [Strategy and feature status](product/strategy-status.md)
+* [Plans and feature status](product/strategy-status.md)
 
 ## Reference and versions
 

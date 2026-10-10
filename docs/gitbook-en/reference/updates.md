@@ -4,6 +4,12 @@ description: Sources, version changes, and features not yet open.
 
 # Documentation versions
 
+## 2026-10-10-draft.5
+
+This edition follows the fees and product language adopted on 2026-10-10. Every deposit pays a 1% deposit fee; the creator's seed pays a 1% creation fee instead, with no deposit fee on top, so the standard net seed is 99 units. There is no fund-operation fee, no management fee and no withdrawal fee. The performance fee is unchanged: CRE8 10% plus the creator's 0–20%, charged on each holder's own profit when they withdraw.
+
+Product pages now say fund, holder, creator, plan, share price, performance, "Withdraw as USDT" and "Withdraw as assets". The legal draft pages keep the wording of their legal sources; only their fee clauses changed. Fee figures in the entries below are historical. Live creation and deposits remain closed.
+
 ## 2026-10-07-draft.4
 
 This edition moves the public documentation to the CRE8 brand site with search, role-based starting points, and language switching. Engineering status was rechecked against the latest mainline: partial multi-asset implementation is merged, but live service and full acceptance remain incomplete. Credit prices remain drafts; contract implementation and platform-token details remain undisclosed.
@@ -24,4 +30,4 @@ Product pages explain the design in ordinary language. Full legal sources are up
 
 ## Updates and use
 
-Changes in features, pricing, deployment, or important rules should identify their impact and availability. Check actual vault settings, current task/purchase confirmations, and legal versions together. A document date does not replace verification of deployment, eligibility, and transactions.
+Changes in features, pricing, deployment, or important rules should identify their impact and availability. Check actual fund settings, current task/purchase confirmations, and legal versions together. A document date does not replace verification of deployment, eligibility, and transactions.

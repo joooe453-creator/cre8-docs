@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress';
 import sidebar from './sidebar.json' with { type: 'json' };
 export default defineConfig({
-  title:'CRE8 Docs', description:'Learn about CRE8 vaults, agents, and the rules governing funds.',
+  title:'CRE8 Docs', description:'Learn about CRE8 funds, plans and AI agents, and the rules each fund keeps.',
   lang:'en', cleanUrls:true, appearance:true, lastUpdated:false,
   sitemap:{ hostname:'https://docs.cre8.finance' },
   head:[

@@ -11,7 +11,7 @@ for(const page of pages){
  const html=await readFile(file,'utf8');
  if(!html.includes('<h1'))failures.push(`${page.route}: missing rendered article`);
  if(page.source.includes('cre8-ai-credits')) for(const needle of ['1 USDT','5 USDT','20 USDT','50 USDT',page.locale==='en'?'Draft':'草案'])if(!html.includes(needle)) failures.push(`${page.route}: missing ${needle}`);
- if(page.locale==='zh-CN'&&page.route==='/zh-cn/')for(const label of ['金库规则','金库份额','净资产价值'])if(!html.includes(`<strong>${label}</strong>`))failures.push(`Broken CJK bold: ${label}`);
+ if(page.locale==='zh-CN'&&page.route==='/zh-cn/')for(const label of ['基金规则','基金份额','份额价格'])if(!html.includes(`<strong>${label}</strong>`))failures.push(`Broken CJK bold: ${label}`);
  for(const [,href]of html.matchAll(/href="([^"?#]+)(?:[?#][^"]*)?"/g)){
   if(!href.startsWith('/')||href.startsWith('//'))continue;
   links++;

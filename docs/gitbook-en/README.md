@@ -1,38 +1,40 @@
 ---
-description: Get to know CRE8 agent vaults, participation, and the rules governing funds.
+description: Get to know CRE8 funds, how holders take part, and the rules each fund keeps.
 ---
 
 # Welcome to CRE8
 
-CRE8 lets creators establish vaults with clearly defined operating rules. An agent manages assets within approved assets, markets, and allocation caps. Participants deposit the vault's accounting asset and receive shares representing their proportional participation and redemption rights.
+US stocks and crypto, from NVIDIA to Bitcoin, in one fund. Describe it in one sentence: CRE8 AI builds it, and the mandate keeps it to its word.
 
-Creators define the scope, agents operate within it, and depositors hold and exit under the vault's rules. Before choosing a vault, understand who can act, where assets can be placed, how fees are calculated, and what may limit an exit.
+Creators open funds with rules the contract enforces. A plan, or the creator's AI agent, runs each fund within its approved assets, markets and allocation caps. Holders deposit the fund's accounting asset and receive shares that represent their proportional stake and their right to withdraw.
 
-> **Current status | 2026-10-07:** CRE8 is a prototype without an independent third-party audit or a verified deployment accepting live funds. Example vaults, holdings, and performance are simulated. This documentation describes the current product design and does not mean the live service is open.
+Creators set the scope, the plan or AI agent works within it, and holders keep or withdraw their shares under the fund's rules. Before choosing a fund, understand who can act, where assets can be placed, how fees are calculated, and what may limit a withdrawal.
+
+> **Current status | 2026-10-10:** CRE8 is a prototype without an independent third-party audit or a verified deployment accepting live funds. Example funds, holdings, and performance are simulated. This documentation describes the current product design and does not mean the live service is open.
 
 ## Start with your role
 
 | What you want to do | Read first |
 |---|---|
-| Understand CRE8 | [How vaults work](getting-started/vaults.md) |
-| Evaluate participation | [Depositor guide](guides/depositors.md) |
-| Understand deposits and exits | [Depositing assets](guides/deposits.md), [Redemptions and exits](guides/redemptions.md) |
-| Create and manage a vault | [Creator guide](guides/creators.md) |
+| Understand CRE8 | [How funds work](getting-started/vaults.md) |
+| Decide whether to hold a fund | [Holder guide](guides/depositors.md) |
+| Understand deposits and withdrawals | [Depositing assets](guides/deposits.md), [Withdrawals and exits](guides/redemptions.md) |
+| Create and run a fund | [Creator guide](guides/creators.md) |
 | Use CRE8 AI and credits | [CRE8 AI and credits](guides/cre8-ai-credits.md) |
 | Use agent tools | [Agent guide](guides/agents.md) |
-| Check the latest strategy scope | [Strategy and feature status](product/strategy-status.md) |
+| Check which plans are available | [Plans and feature status](product/strategy-status.md) |
 | Understand fees and risks | [Fees](product/fees.md), [Risk controls and remaining risks](product/risk-controls.md) |
 
 ## Three core concepts
 
-A **mandate** defines permitted assets, markets, allocation caps, and operations. Agent activity is limited by these rules.
+A **mandate** defines the assets, markets, allocation caps and operations a fund may use. The contract enforces it, so neither the plan nor the AI agent can act outside it.
 
-**Vault shares** record your proportional participation. Their value changes with asset valuations, fees, and exit costs, and may fall below your initial contribution.
+**Shares** record your proportional stake in a fund. Their value changes with asset valuations, fees and exit costs, and may fall below what you put in.
 
-**Net asset value (NAV)** is the estimated asset value expressed in the vault's accounting asset. NAV helps explain the vault's position; actual redemptions also depend on execution prices, liquidity, and costs.
+**Share price** is the value of one share, estimated in the fund's accounting asset. It helps explain where the fund stands; what you actually receive when you withdraw also depends on execution prices, liquidity and costs.
 
-## Before you use a vault
+## Before you use a fund
 
-After a deposit, the agent may operate autonomously within the mandate. Depositors do not sign each subsequent trade. You may lose your entire principal. Risk controls do not guarantee returns, a maximum loss, or an exit time.
+After you deposit, the plan or AI agent may act within the mandate on its own. Holders do not sign each later trade. You could lose all of your capital. Risk controls do not guarantee returns, a maximum loss or an exit time.
 
 Read [Before you use CRE8](legal/before-you-use.md), [Roles and permissions](product/permissions.md), and [Security and service status](product/security-and-status.md). Legal documents remain drafts that are not in effect. The operating entity and markets open to live service have not been finalized.

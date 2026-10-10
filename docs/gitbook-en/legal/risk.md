@@ -40,15 +40,15 @@ Data and AI explanations may be stale, incomplete, or inaccurate. The personal a
 
 ## VI. Fees and interests
 
-There is no management fee. Deposits pay 0.5% of gross accounting assets actually used, rounded up in raw units. Chargeable deployments, reductions, and separate position operations pay 0.1%; ordinary holder exits do not additionally pay 0.1% for that reason. The operation cap uses the remaining amount of 1% of the latest valid pre-fee NAV in each fixed 365-day period from initialization. NAV declines do not recover paid fees. It is not a continuous or rolling-year 1% guarantee.
+There is no management fee and no fund-operation fee. Deposits pay a fixed 1% of gross accounting assets actually used, rounded up in raw units. The 1% on the creator's seed is called the creation fee; the seed pays no deposit fee on top.
 
 Exit performance fees use each address's net cost basis and positive profit for that exit: platform 10% plus fixed-at-creation creator 0–20%, totaling 10–30%. Partial exits allocate cost proportionally. No positive profit means no performance fee for that exit. Costs are not netted across wallets, vaults, or all historical exits. There is no pooled unrealized high-water mark, 90/10 split, or issuance of fee shares.
 
-Cash exits use actual liquidation proceeds. Reliably valued in-kind exits take a fee proportion from the same assets, without guaranteeing their value can all be converted into cash. Unpriceable fees are waived for that exit. Entry and operation fees go to the platform, and both platform and creator collect their performance fees, creating potential conflicts. Gas, trading, slippage, and protocol costs are separate. A refundable execution buffer is not an extra fixed fee.
+Cash exits use actual liquidation proceeds. Reliably valued in-kind exits take a fee proportion from the same assets, without guaranteeing their value can all be converted into cash. Unpriceable fees are waived for that exit. Creation and deposit fees go to the platform, and both platform and creator collect their performance fees, creating potential conflicts. Gas, trading, slippage, and protocol costs are separate. A refundable execution buffer is not an extra fixed fee.
 
 ## VII. Exits, liquidity, and creator ownership
 
-Creators contribute 100 accounting-asset units and pay the 0.5% entry fee. There is no seed time lock; while other holders remain, they must hold at least 2% of circulating shares, limiting redemption. Ordinary holders have no fixed time lock. All shares are nontransferable, so secondary-market sale is not an exit route. No time lock does not mean original assets are always recoverable immediately.
+Creators contribute 100 accounting-asset units and pay the 1% creation fee. There is no seed time lock; while other holders remain, they must hold at least 2% of circulating shares, limiting redemption. Ordinary holders have no fixed time lock. All shares are nontransferable, so secondary-market sale is not an exit route. No time lock does not mean original assets are always recoverable immediately.
 
 Cash redemption means the accounting token, such as USDT, rather than fiat. It processes proportional inventory, subject to routes, oracles, minimum proceeds, and deadlines. Any failed exit component may revert the entire transaction.
 

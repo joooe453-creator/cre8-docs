@@ -14,7 +14,7 @@ CRE8 remains a prototype without a verified vault deployment accepting live fund
 
 **The Operator may act autonomously.** After deposit it may operate within the mandate without your signature on every trade. Execution-agent replacement has a governance delay.
 
-**Fees are calculated separately.** Entry is 0.5%; applicable fund operations are 0.1%, subject to a fixed annual-period cap. Positive exit profit pays platform 10% plus creator 0–20%, based on that address's cost basis for the exit. AI credits, gas, slippage, and third-party costs are separate. See [Fees](../product/fees.md).
+**Fees are calculated separately.** Creation is 1% of the creator's seed, charged once when the fund goes live; every other deposit pays 1%; there is no fund-operation fee. Positive exit profit pays platform 10% plus creator 0–20%, based on that address's cost basis for the exit. AI credits, gas, slippage, and third-party costs are separate. See [Fees](../product/fees.md).
 
 **No fixed time lock does not guarantee liquidity.** Creators contribute 100 units and retain at least 2% of circulating shares while others remain. Shares are nontransferable. In-kind exits may deliver restricted receipts.
 

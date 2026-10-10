@@ -1,56 +1,58 @@
 ---
-description: Compare cash and in-kind redemptions, actual proceeds, liquidity, and failure conditions.
+description: Compare Withdraw as USDT and Withdraw as assets, actual proceeds, liquidity, and failure conditions.
 ---
 
-# Redemptions and exits
+# Withdrawals and exits
 
-Redemption processes the proportional assets corresponding to your shares. You may convert that inventory into the vault's accounting asset or receive the original assets and protocol receipts directly.
+A withdrawal processes the proportional assets behind your shares. You may convert that share of the holdings into the fund's accounting asset, or receive the original assets and protocol receipts directly.
 
-There is currently no deployment open to live participation. This page describes the design; available routes must be checked against the future vault and market state.
+There is currently no deployment open to live participation. This page describes the design; available routes must be checked against the future fund and market state.
 
 ## Two exit routes
 
 | Route | What you may receive | Main conditions |
 |---|---|---|
-| Cash redemption | The accounting token, such as USDT | Requires market withdrawals and swaps; depends on valuation, liquidity, minimum proceeds, and deadline |
-| In-kind redemption | Proportional idle accounting tokens, holding tokens, and protocol receipts | Does not first convert everything into the accounting token; token and receipt transfers remain subject to third-party restrictions |
+| Withdraw as USDT | The accounting token, such as USDT | Requires market withdrawals and swaps; depends on valuation, liquidity, minimum proceeds, and deadline |
+| Withdraw as assets | Proportional idle accounting tokens, holding tokens, and protocol receipts | Does not first convert everything into the accounting token; token and receipt transfers remain subject to third-party restrictions |
 
-“Cash” means the vault's accounting token. It does not promise a bank transfer or fiat withdrawal.
+Withdraw as USDT pays out the fund's accounting token on the network. It does not promise a bank transfer or fiat withdrawal.
 
-## Cash redemption
+## Withdraw as USDT
 
-Once open, select shares to redeem, check estimated proceeds, minimum proceeds, and deadline, verify the recipient, and sign.
+Once open, select the shares to withdraw, check estimated proceeds, minimum proceeds, and deadline, check the recipient, and sign.
 
-The system processes your proportional inventory. You receive the corresponding idle assets and actual exit proceeds. Swap slippage, exit costs, or losses affect the amount received. The displayed valuation does not guarantee sale at that price.
+The system processes your proportional share of the holdings. You receive the matching idle assets and the actual exit proceeds. Swap slippage, exit costs, or losses affect the amount received. You may not be able to sell at the displayed valuation.
 
-If a required market exit, swap, or minimum-proceeds check fails, the entire redemption reverts rather than leaving a partially completed redemption. A failed transaction can still consume gas.
+If a required market exit, swap, or minimum-proceeds check fails, the whole withdrawal reverts; it is never left half done. A failed transaction can still cost gas.
 
-## In-kind redemption
+## Withdraw as assets
 
-This route provides an alternative when valuation, swaps, or third-party cash withdrawals are difficult. Before signing, review the tokens and receipts you may receive and whether you can handle later redemption or transfer.
+This route is an alternative when valuation, swaps, or withdrawals from third-party protocols are difficult. Before signing, review the tokens and receipts you may receive and whether you can handle them later, such as turning them back into the underlying asset or transferring them.
 
-For example, you may receive a lending-market receipt held by the vault. Redeeming its underlying still requires available funds and permitted transfers and redemptions at the original protocol. The receipt may lack a trading market or be unredeemable due to a pause, insolvency, or token restrictions.
+For example, you may receive a lending-market receipt held by the fund. Getting its underlying asset back still requires available liquidity at the original protocol and permitted transfers there. The receipt may have no trading market, or may be impossible to turn back into the underlying because of a pause, insolvency, or token restrictions.
 
-An in-kind exit does not promise a fixed accounting-asset amount. Transfer failures, insufficient gas, and network issues can also prevent it.
+Withdraw as assets does not promise a fixed amount of the accounting asset. Transfer failures, insufficient gas, and network issues can also prevent it.
 
 ## Fees on exit
 
-Cash exit performance fees apply to positive profit based on that address's cost basis for this exit and actual liquidation proceeds: platform 10% plus creator 0–20%. An in-kind exit with reliable valuation settles fees against the proportional inventory's value and allocates fees from the same assets. It is not automatically fee-free.
+The performance fee is charged only on your own realized profit when you withdraw: CRE8 10% plus the creator's 0–20% (fixed at creation; default 10%), at most 30%. No profit, no fee. For Withdraw as USDT, profit is based on your address's cost basis for this withdrawal and the actual sale proceeds. When valuation is reliable, Withdraw as assets settles fees against the value of your proportional share and takes the fees from those same assets. It is not automatically fee-free.
 
-When valuation is unavailable, the current design waives the unpriceable performance fee for that in-kind exit to preserve the exit route. This does not make receipts immediately redeemable or guarantee transaction success.
+When valuation is unavailable, the current design waives the performance fee that cannot be priced for that withdrawal as assets, to keep the route open. This does not make receipts immediately usable or promise that the transaction succeeds.
+
+There is no withdrawal fee. DEX fees and slippage go to the DEX, not CRE8.
 
 ## Pauses and lockups
 
-A vault pause blocks new deposits and new deployment while retaining proportional holder exits and risk reduction by design. Third-party protocol, token, or network restrictions may still affect these operations.
+When a fund shows Deposits paused with its reason, new deposits and new deployment stop. By design, holders can still withdraw their proportional share and risk can still be reduced. Third-party protocol, token, or network restrictions may still affect these operations.
 
-Ordinary depositors have no fixed product lockup. Creators also have no fixed time lock, but must retain at least 2% of circulating shares after redemption while others remain. The last actual holder may exit completely.
+Ordinary holders have no fixed lockup. Creators also have no fixed time lock, but while others remain they must keep at least 2% of circulating shares after withdrawing. The last actual holder may exit completely.
 
-After the last actual holder exits, the current design closes the vault permanently to new cohorts. A final cash exit may also deliver remaining original assets or receipts. Precision and rounding can leave small residuals; recovery of every smallest token unit is not promised.
+After the last actual holder exits, the current design closes the fund permanently to new deposits. A final Withdraw as USDT may also deliver remaining original assets or receipts. Precision and rounding can leave small residuals; recovery of every smallest token unit is not promised.
 
 ## If you cannot exit
 
-Check shares, creator minimum ownership, recipient, gas, deadline, minimum proceeds, and third-party market state. Preserve the original hash and check an unknown result rather than submitting again.
+Check shares, creator minimum ownership, recipient, gas, deadline, minimum proceeds, and third-party market state. Keep the original hash and check an unknown result rather than submitting again.
 
-Read [Risk controls and remaining risks](../product/risk-controls.md) and [Vault risk disclosure](../legal/risk.md).
+Read [Risk controls and remaining risks](../product/risk-controls.md) and [Risk disclosure](../legal/risk.md).
 
 For specific errors or unknown results, see [Troubleshooting](../reference/troubleshooting.md).

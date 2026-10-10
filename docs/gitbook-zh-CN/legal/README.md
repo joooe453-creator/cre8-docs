@@ -8,7 +8,7 @@ description: 法律草稿、使用资格、风险与隐私告知的阅读入口�
 
 | 文件 | 内容 |
 |---|---|
-| [使用前须知](before-you-use.md) | 金库、费用、权限、退出与 AI 服务摘要 |
+| [使用前须知](before-you-use.md) | 基金、费用、权限、提取与 AI 服务摘要 |
 | [使用条款草稿](terms.md) | 平台、创作者与 Operator 的角色及各自权利义务 |
 | [金库风险揭露](risk.md) | 市场、操作、费用、第三方与退出风险 |
 | [使用资格与地区限制](eligibility.md) | 资格、准入草案与既有部位处理 |
@@ -16,4 +16,4 @@ description: 法律草稿、使用资格、风险与隐私告知的阅读入口�
 
 完整法律草稿来源版本为 2026-10-07-draft.8；本书编排为产品阅读稿，移除内部与实作措辞，不使草稿生效。正式条款仍须完成主体、资格、联络、必要同意及资料政策等安排。
 
-AI 服务的点数与金库收费分开，参阅[CRE8 AI 与 credits](../guides/cre8-ai-credits.md)及[费用](../product/fees.md)。
+AI 服务的点数与基金费用分开，参阅[CRE8 AI 与 credits](../guides/cre8-ai-credits.md)及[费用](../product/fees.md)。

@@ -28,7 +28,7 @@ Queries and exits for existing positions do not require acceptance of new commer
 
 ### 3. Platform, creator, and Operator roles
 
-CRE8 provides creation, information display, transaction preparation, and related tools. Creators set assets, markets, caps, and a fixed performance fee, and appoint an Operator using its own signer for permitted operations. The platform receives entry and fund-operation fees, and both platform and creator charge exit performance fees at their respective rates. The arrangement cannot generally be characterized as completely neutral, free, or merely informational.
+CRE8 provides creation, information display, transaction preparation, and related tools. Creators set assets, markets, caps, and a fixed performance fee, and appoint an Operator using its own signer for permitted operations. The platform receives creation and deposit fees, and both platform and creator charge exit performance fees at their respective rates. The arrangement cannot generally be characterized as completely neutral, free, or merely informational.
 
 Vaults pool participant contributions and issue redeemable shares. Operators may continuously adjust holdings within authority. Legal classification and responsibilities depend on actual rights, control, fees, promotion, and applicable law. Labels such as DeFi, DAO, non-custodial, AI, or smart contracts do not automatically exclude financial, consumer, or other regulation.
 
@@ -56,9 +56,9 @@ An individual depositor cannot revoke or replace the whole vault's Operator. The
 
 ### 6. Creation, deposits, and creator duties
 
-Creation has preparation, deployment, and final activation stages. The first two neither contribute assets nor complete registration. Final activation contributes 100 accounting-asset units and applies the same 0.5% entry fee. Creator and ordinary-holder shares have no fixed time lock. While others remain, the creator must hold at least 2% of circulating shares, which limits maximum redemption and may constrain others' new deposits. The last actual holder may exit entirely. This is minimum ownership, not a separate margin deposit or principal guarantee.
+Creation has preparation, deployment, and final activation stages. The first two neither contribute assets nor complete registration. Final activation contributes 100 accounting-asset units and charges the 1% creation fee (the same rate as the deposit fee; the seed pays no deposit fee on top). Creator and ordinary-holder shares have no fixed time lock. While others remain, the creator must hold at least 2% of circulating shares, which limits maximum redemption and may constrain others' new deposits. The last actual holder may exit entirely. This is minimum ownership, not a separate margin deposit or principal guarantee.
 
-Deposits first pay the entry fee and receive shares based on conservative valuation and actual contribution. Unused transaction budget is refunded to the payer. Nonempty-vault quotes may reserve a 1% execution buffer, which is refundable budget rather than an extra fixed fee. Check network, official vault address, accounting asset, amount, recipient, minimum shares, and deadline. Examples, design pages, and same-name assets do not replace verified addresses and onchain configuration.
+Deposits first pay the deposit fee and receive shares based on conservative valuation and actual contribution. Unused transaction budget is refunded to the payer. Nonempty-vault quotes may reserve a 1% execution buffer, which is refundable budget rather than an extra fixed fee. Check network, official vault address, accounting asset, amount, recipient, minimum shares, and deadline. Examples, design pages, and same-name assets do not replace verified addresses and onchain configuration.
 
 Creators must truthfully explain strategy, rates, authority, interests, and known risks. Do not fabricate performance, promise protected principal or returns, or imply endorsement by the platform, auditors, or protocols. Creator and Operator promotion, management, and other activities must meet applicable qualifications. Interface review or technical approval is not legal permission.
 
@@ -76,17 +76,18 @@ Underlying upgrades, multisigs, pauses, blacklists, parameters, and receipts hav
 
 The current model has no management fee. These fees apply, with gas, slippage, trading, and protocol costs charged separately according to actual activity:
 
-- **Entry fee: 0.5%.** Calculated on gross accounting assets actually used, rounded up in raw token units. Unused budget is not charged. The creator's 100-unit seed also pays it, giving a standard net contribution of 99.5 units.
-- **Fund-operation fee: 0.1%.** Applies to chargeable capital deployments, reductions, and separate position operations. It is not an additional 0.1% for each click, approval, or ordinary holder redemption. Each fixed 365-day period from initialization has a cumulative cap of 1% of the latest valid pre-fee NAV; a new charge cannot exceed the remaining cap. A NAV decline does not recover paid fees. Collected fees are not necessarily below 1% of current NAV at every moment, and this is not a rolling 365-day cap.
+- **Creation fee: 1% of the creator's seed.** Charged once when the fund goes live; the creator's 100-unit seed gives a standard net contribution of 99 units, and the seed pays no deposit fee on top.
+- **Deposit fee: 1%.** Calculated on gross accounting assets actually used, rounded up in raw token units. Unused budget is not charged.
+- **Fund-operation fee: none.** The contract keeps its charging hook, but the rate and the cap are both 0.
 - **Exit performance fee: fixed platform 10% plus creator 0–20%.** The creator rate is fixed at creation. The total is 10–30%, each applied to positive exit profit. The old 90/10 split is not used, and fee shares are not issued.
 
 Each address has its own cost basis increased by net actual deposits. Partial exits allocate cost according to shares redeemed relative to that address's holdings, with raw-unit rounding. Cash-exit profit is the positive difference between actual liquidation proceeds and allocated cost. No positive difference means no performance fee for that exit. It is not netting across vaults, wallets, or all historical exits, or charging on a pooled unrealized high-water mark.
 
-For example, cost basis 100, proceeds 120, and creator rate 10% produce profit 20. Platform and creator each receive 2, leaving 116 net. This ignores raw-unit rounding; 100 is net basis rather than the original payment including entry fee.
+For example, cost basis 100, proceeds 120, and creator rate 10% produce profit 20. Platform and creator each receive 2, leaving 116 net. This ignores raw-unit rounding; 100 is net basis rather than the original payment including the deposit fee.
 
 A reliably valued in-kind exit settles fees on that cohort's proportional asset value, sending the applicable proportion of those same assets to recipients instead of converting all assets first. Unpriceable fees are waived for an exit without reliable valuation to preserve the in-kind route. Cash fees enter a restricted fee-claim account. Recipients claim only their accrued fees and gain no authority to dispose of principal or burn holders' shares.
 
-Entry and operation fees go to the platform. Both platform and creator benefit from positive exit profits and may have strategy, operating, and promotional conflicts. Read the vault's actual rates and recipient addresses.
+Creation and deposit fees go to the platform. Both platform and creator benefit from positive exit profits and may have strategy, operating, and promotional conflicts. Read the vault's actual rates and recipient addresses.
 
 ### 9. Redemptions, in-kind exits, and limitations
 

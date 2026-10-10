@@ -15,7 +15,7 @@ CRE8 defines execution scope through complete asset and market combinations. Sho
 | Token holdings | Hold approved assets | Tokens retain price, issuer, and transfer risks |
 | PancakeSwap V3 | Swap a fixed input into or out of designated assets through specified direct pools | Basic swaps do not support arbitrary routing or all PancakeSwap features; V3 LP is a separate position prototype |
 | Venus | Supply to and withdraw from designated markets | This supply entry excludes borrowing; separate debt positions need independent checks |
-| Designated Lista third-party vaults | Deposit into and redeem specified vault shares | Does not enable every Lista vault, loan, or staking feature |
+| Designated Lista third-party vaults | Deposit into and withdraw from specified vaults | Does not enable every Lista vault, loan, or staking feature |
 | Aave V3 | Supply to and withdraw from designated markets | This supply entry excludes borrowing; separate debt positions need independent checks |
 
 Caps, pauses, liquidity, and governance changes may temporarily block a lending market or third-party vault. Approved combinations still need checks for each operation.
@@ -26,7 +26,7 @@ Caps, pauses, liquidity, and governance changes may temporarily block a lending 
 
 CRE8 may supply selected assets to approved Lista vaults and receive their shares. Those vaults may allocate into multiple lending markets. Assess their curator, market choices, and liquidity in addition to Lista protocol risk.
 
-Fixing a Lista vault does not freeze its underlying allocations. Management and governance can affect capacity, valuation, and exits. An in-kind redemption may deliver its third-party shares.
+Fixing a Lista vault does not freeze its underlying allocations. Management and governance can affect capacity, valuation, and exits. If you withdraw as assets, you may receive these third-party shares.
 
 Third-party reading: [Lista Lending Earn](https://docs.bsc.lista.org/user-guide/lista-lending/lista-lending-earn), [Third-Party Vault Risk Management](https://docs.bsc.lista.org/introduction/lista-lending/third-party-vault-risk-management).
 
@@ -34,7 +34,7 @@ Third-party reading: [Lista Lending Earn](https://docs.bsc.lista.org/user-guide/
 
 CRE8's supply scope covers supplying to and withdrawing from specified Aave V3 markets, excluding borrowing in this flow. Supply rates, caps, pauses, and available withdrawal liquidity affect operations.
 
-A recorded supply position does not guarantee sufficient unborrowed assets for withdrawal. In-kind exits may deliver receipts whose later redemption still depends on the market.
+A recorded supply position does not guarantee sufficient unborrowed assets for withdrawal. If you withdraw as assets, you may receive receipts; turning them back into the underlying still depends on the market.
 
 Aave documentation also covers V4 and other products. Check the version; this page does not expand CRE8's V3 scope.
 
@@ -50,7 +50,7 @@ Third-party reading: [Token Swaps](https://docs.pancakeswap.finance/trade/pancak
 
 ### Venus: designated supply markets
 
-CRE8 supplies to and redeems from specified Venus markets. Supply creates protocol receipts whose value reflects the underlying and market income. An in-kind exit may deliver these receipts.
+CRE8 supplies to and withdraws from specified Venus markets. Supply creates protocol receipts whose value reflects the underlying and market income. If you withdraw as assets, you may receive these receipts.
 
 Supply caps limit new deposits; available cash and pauses may affect withdrawals. Borrowing, collateral, and leverage guides in Venus documentation do not mean those operations are enabled in this supply flow.
 
@@ -60,16 +60,16 @@ Third-party reading: [Supplying and borrowing](https://docs-v4.venus.io/guides/s
 
 Creators first choose assets, then holding, third-party vaults, or supply destinations. The system checks whether the complete combination fits a reviewed configuration.
 
-Identical names do not establish identical addresses, and different networks cannot share one configuration. Finding an asset, exporting a design, or matching a name does not make a live vault available.
+Identical names do not establish identical addresses, and different networks cannot share one configuration. Finding an asset, exporting a design, or matching a name does not make a live fund available.
 
 ## Other capabilities and current progress
 
-Buy-once, scheduled and dip buying, and some rebalancing have basic implementations. Separate debt and PancakeSwap V3 LP prototypes also exist. This does not establish that all modes can be combined in one vault or have completed live acceptance.
+Buy-once, scheduled and dip buying, and some rebalancing have basic implementations. Separate debt and PancakeSwap V3 LP prototypes also exist. This does not establish that all modes can be combined in one fund or have completed live acceptance.
 
-See [Strategy and feature status](strategy-status.md) for multi-asset strategies, BNB staking, and borrowing-to-supply plans and branch progress. Stock and RWA issuers, pricing, depth, and eligibility require individual review. Aster accounts are a separate integration, with balances excluded from vault NAV. Futures and perpetuals are outside this round's vault strategies.
+See [Plans and feature status](strategy-status.md) for the design and branch progress of multi-asset, multi-plan funds, BNB staking, and borrowing to supply. US stock and RWA issuers, pricing, depth, and eligibility require individual review. Aster accounts are a separate integration, with balances not counted in the fund's share price. Futures and perpetuals are outside this round's fund plans.
 
 ## Branding and underlying risk
 
-Names, logos, and integrations do not imply protocol endorsement of CRE8, creators, strategies, or principal safety. An underlying audit does not mean CRE8's integration or individual vault has been independently audited.
+Names, logos, and integrations do not mean any protocol endorses CRE8, its creators, plans, or the value of your principal. An underlying audit does not mean CRE8's integration or an individual fund has been independently audited.
 
 Read [Security and service status](security-and-status.md).

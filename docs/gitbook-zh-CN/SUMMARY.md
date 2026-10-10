@@ -4,13 +4,13 @@
 
 ## 开始了解
 
-* [金库如何运作](getting-started/vaults.md)
+* [基金如何运作](getting-started/vaults.md)
 
 ## 使用指南
 
-* [存款人指南](guides/depositors.md)
+* [持有人指南](guides/depositors.md)
   * [存入资产](guides/deposits.md)
-  * [赎回与退出](guides/redemptions.md)
+  * [提取与退出](guides/redemptions.md)
 * [创作者指南](guides/creators.md)
 * [Agent 使用指南](guides/agents.md)
 * [CRE8 AI 与 credits](guides/cre8-ai-credits.md)
@@ -19,11 +19,11 @@
 
 * [角色与权限](product/permissions.md)
 * [费用](product/fees.md)
-* [NAV 与绩效](product/nav-and-performance.md)
+* [份额价格与业绩](product/nav-and-performance.md)
 * [风控与剩余风险](product/risk-controls.md)
 * [支持的协议与操作](product/integrations.md)
 * [安全与服务状态](product/security-and-status.md)
-* [策略与功能进度](product/strategy-status.md)
+* [计划与功能进度](product/strategy-status.md)
 
 ## 查询与文件版本
 
